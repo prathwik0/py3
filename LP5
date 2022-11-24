@@ -1,0 +1,15 @@
+def monthlyPay():
+    name = input("Enter name: ")
+    hours = int(input("Enter number of hours worked in a week: "))
+    weeks = 30/7.0
+    pay = float(input("Enter hourly pay: "))
+
+    salary = hours * weeks * pay;
+
+    print("\nName: ", name)
+    print("Hours worked per week: ", hours)
+    print("No. of weeks worked: ", weeks)
+    print("Hourly pay: ", pay)
+    print("Monthly Salary: ", salary)
+
+monthlyPay()
