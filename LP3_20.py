@@ -11,7 +11,9 @@ grosssal = salary + allowance
 
 tax = 0
 
-if grosssal > 5000 and grosssal <= 10000:
+if grosssal <= 5000:
+    tax = grosssal * 0
+elif grosssal <= 10000:
     tax = grosssal * 0.1
 elif grosssal <= 20000:
     tax = grosssal * 0.2
