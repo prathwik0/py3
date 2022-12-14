@@ -1,9 +1,13 @@
-a = input("Enter string: ")
+A = input("Enter string: ") 
+a = A.lower()
 
 count = 0
+dict = {'a':0, 'e':0, 'i':0, 'o':0, 'u':0} 
 
 for i in a:
-    if i in ['a', 'e', 'i', 'e', 'o', 'A', 'E', 'I', 'O', 'U']:
-        count = count + 1
+    if i in ["a","e","i","o","u"]:
+        dict[i] += 1
+        count += 1
 
-print("The total num of vovels is:", count)
+print(dict)
+print("No. of vowels = ", count)
