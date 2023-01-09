@@ -1,6 +1,6 @@
-birthday = "06.23.1995"
+birthday = input("Enter birthday: ")
 
-birthday_list = birthday.split(".")
+birthday_list = birthday.split("/")
 print(birthday_list)
 
 birthday_dict = {
@@ -11,6 +11,6 @@ birthday_dict = {
 
 print(birthday_dict)
 
-birthday_str = " ".join(birthday_list)
+birthday_str = "/".join(birthday_dict.values())
 
 print(birthday_str)
