@@ -2,16 +2,16 @@ fileName = 'marks.txt'
 keyFileName = 'key.txt'
 
 with open(keyFileName, 'r') as f:
-    key_file_content = f.readline()
+    keyFile = f.readline()
 
 with open(fileName, 'r') as f:
-    marks_file_content = f.readlines()
+    file = f.readlines()
 
-answerKey = [i for i in key_file_content.split(
+answerKey = [i for i in keyFile.split(
     ' ') if i.isalnum() and len(i) == 1]
 
 students = {}
-for student in marks_file_content:
+for student in file:
     student = student.split(' ')
     students[student[0]] = [i for i in student if i.isalnum() and len(i) == 1]
 
