@@ -24,36 +24,29 @@ fileName = 'marks.txt'
 keyFileName = 'key.txt'
 
 with open(keyFileName, 'r') as f:
-    keyFile = f.readline()
-
-with open(fileName, 'r') as f:
-    file = f.readlines()
-
-answerKey = [i for i in keyFile.split(
-    ' ') if i.isalnum() and len(i) == 1]
+    answerKey = f.readline().strip().split(' ')[1:]
+    # answerKey.pop(0)
 
 students = {}
-for student in file:
-    student = student.split(' ')
-    students[student[0]] = [i for i in student if i.isalnum() and len(i) == 1]
+with open(fileName, 'r') as f:
+    for line in f:
+        x = line.strip().split(' ')
+        students[x[0]] = x[1:]
+
+# import itertools
+# studentMarks = {student: sum(ans == key for ans, key in zip(
+#     students[student], answerKey)) for student in students.keys()}
 
 studentMarks = {}
-max = 0
-for student in students.keys():
-    score = 0
-    for i in range(len(answerKey)):
-        if answerKey[i] == students[student][i]:
-            score += 1
-    studentMarks[student] = score
-    max = score if max < score else max
+for name in students.keys():
+    marks = sum(answerKey[i] == students[name][i]
+                for i in range(len(answerKey)))
+    studentMarks[name] = marks
+    print(name, ":", marks)
 
-topScorer = []
-for student in studentMarks.keys():
-    marks = studentMarks[student]
-    print(student, "marks =", marks)
-    if marks == max:
-        topScorer.append(student)
+topScore = max(studentMarks.values())
+topScorer = [name for name in studentMarks if studentMarks[name] == topScore]
 
-print("Top Score =", max)
+print("Top Score =", topScore)
 for student in topScorer:
     print("Top Scorer :", student)
