@@ -1,3 +1,6 @@
+# Write a function to reverse the given number and check whether entered number is
+# palindrome or not.
+
 def reverse(n):
     n2 = n
     nReverse = 0
