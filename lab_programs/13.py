@@ -1,3 +1,10 @@
+# Suppose that a text file contains marks for 6 courses for a
+# student in a line. Each coursemarks is separated by space as
+# delimiter. File contains marks for ‘n’ number of students in
+# separate lines. Write a program that readsthe marks from the
+# file for each student and displays the total and average.
+# Your program should prompt the user to enter a filename.
+
 filename = input("Enter the filename: ")
 
 with open(filename, 'r') as f:
