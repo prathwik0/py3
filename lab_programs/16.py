@@ -1,3 +1,16 @@
+# Design a class named Account that contains:
+#   A private int data field named accountno for the account.A
+#   A private float data field named balance for the account.
+#   A constructor that creates an account with the specified accountno and Initial balance (default 100).
+#   A method named withdraws that withdraws a specified amount from the account. A minimum balance of 100 should be maintained for each account.
+#   A method named deposit that deposits a specified amount to the specific account.
+#
+# Write a program that maintains ‘n’ number of Account objects with unique accountno and supports following operations.
+#   a) New account creation
+#   b) deposit operation for agiven accountno
+#   c) withdraw operation for a given account no
+#   d) Display account no with highest balance
+
 class account:
     def __init__(self, num, bal=100):
         self.__acc_num = num
@@ -11,10 +24,10 @@ class account:
 
     def deposit(self, amount):
         self.__balance = self.__balance + amount
-    
+
     def getAccountNum(self):
         return self.__acc_num
-    
+
     def getBalance(self):
         return self.__balance
 
@@ -86,6 +99,6 @@ while (1):
 
     elif ch == 4:
         highest_balance()
-        
-    else: 
+
+    else:
         quit()
