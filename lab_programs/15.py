@@ -24,7 +24,7 @@ def maxArea(list):
     max = list[0]
 
     for rect in list:
-        if rect.area > max.area:
+        if rect.getArea() > max.area: #ATQ (acc to the ques getArea() func is to be called for the area of the reactangle
             max = rect
     return max
 
@@ -33,7 +33,7 @@ def minArea(list):
     min = list[0]
 
     for rect in list:
-        if rect.area < min.area:
+        if rect.getArea() < min.area: #ATQ (acc to the ques getArea() func is to be called for the area of the reactangle
             min = rect
     return min
 
